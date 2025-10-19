@@ -138,7 +138,7 @@ public class DeepSeekFlights1Tests {
         login_page4.logins("standard_user", "stand_pass1");
         login_page4.verify_successful_login();
         PoiskTikets PTiketForReg = new PoiskTikets();
-        PTiketForReg.findFlights("Москва", "Нью-Йорк","15.12.2025");
+        PTiketForReg.findFlights("Москва", "Нью-Йорк","2025-12-15");
         ListReisov LR = new ListReisov();
         //Проверить переход к форме регистрации
         LR.chooseFirstFlight("3");
@@ -160,7 +160,7 @@ public class DeepSeekFlights1Tests {
         login_page4.logins("standard_user", "stand_pass1");
         login_page4.verify_successful_login();
         PoiskTikets PTiketForReg = new PoiskTikets();
-        PTiketForReg.findFlights("Москва", "Нью-Йорк","15.12.2025");
+        PTiketForReg.findFlights("Москва", "Нью-Йорк","2025-12-15");
         ListReisov LR = new ListReisov();
         LR.chooseFirstFlight("4");
         FormRegistrations FR = new FormRegistrations();
@@ -188,7 +188,7 @@ public class DeepSeekFlights1Tests {
         login_page4.loginsPressEnter("standard_user", "stand_pass1");
         sleep(5000);
         PoiskTikets PTiketForReg = new PoiskTikets();
-        PTiketForReg.findFlightsPressEnter("Москва", "Нью-Йорк","15.12.2025");
+        PTiketForReg.findFlightsPressEnter("Москва", "Нью-Йорк","2025-12-15");
         ListReisov LR = new ListReisov();
         //Проверить переход к форме регистрации
         LR.chooseFirstFlightPressEnter("2");

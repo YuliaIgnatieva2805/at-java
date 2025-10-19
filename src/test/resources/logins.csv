@@ -1,0 +1,4 @@
+user,pass,mm
+"standard_user","stand_pass1_no","Неверное имя пользователя или пароль."
+"","","Username and Password are required."
+"locked_out_user","lock_pass2","Пользователь заблокирован."

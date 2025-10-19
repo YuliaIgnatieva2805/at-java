@@ -23,6 +23,7 @@ public class ListReisov {
         firstRegButton.click();
     }
     //УКАЗАТЬ КАКУЮ КНОПКУ ПО СПИСКУ РЕЙСАМ НАЖАТЬ
+
     public void chooseFirstFlight(String pp) {
         //firstRegButton.click();
         // путь //*[@id='flightsList']//tr[2]//button
@@ -34,7 +35,8 @@ public class ListReisov {
         //firstRegButton.click();
         // путь //*[@id='flightsList']//tr[2]//button
         String ss = "//*[@id='flightsList']//tr[" + pp +"]/td[7]/button";
-        $x(ss).pressEnter();
+        //$x(ss).pressEnter();
+        $x(ss).click();
     }
 
     public void verifySuccessfullSearch() {

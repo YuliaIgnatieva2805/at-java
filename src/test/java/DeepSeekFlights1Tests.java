@@ -81,8 +81,9 @@ public class DeepSeekFlights1Tests {
         // поиск рейса успешный:
         PoiskTikets PTiket2 = new PoiskTikets();
         PTiket2.findFlights(fr, ff, dd);
+        sleep(5_000);
         PTiket2.er_mess(msm);
-        //sleep(5_000);
+        sleep(5_000);
     }
     @Test
     @DisplayName("POM-04. Тестирование списка рейсов")

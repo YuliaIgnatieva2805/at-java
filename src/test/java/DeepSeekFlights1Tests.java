@@ -59,20 +59,16 @@ public class DeepSeekFlights1Tests {
         }
 
     @Test
-    @DisplayName("POM-02. Вход st_user и усп поиск рейса")
+    @DisplayName("POM-02. Вход st_user и усп поиск первого рейса")
     void test02pp1() {
         Login login_page = new Login();
         login_page.logins("standard_user", "stand_pass1");
         login_page.verify_successful_login();
         // поиск рейса успешный:
-        PoiskTikets PTiket = new PoiskTikets();
-        sleep(5_000);
-        PTiket.findFlights("Москва", "Нью-Йорк","15.12.2025");
-        sleep(5_000);
+        PoiskTikets PTikett = new PoiskTikets();
+        PTikett.findFlights("Москва", "Нью-Йорк","15.12.2025");
         ListReisov LR = new ListReisov();
-        sleep(5_000);
-         LR.chooseFirstFlight();
-        sleep(5_000);   // нажали первую кнопку для перехода к подтверж регистрации
+        LR.chooseFirstFlight();    // нажали первую кнопку для перехода к подтверж регистрации
     }
 
     @DisplayName("POM-03. Тестирование формы поиска рейса без даты и с прошлой датой")
@@ -97,30 +93,30 @@ public class DeepSeekFlights1Tests {
         login_page3.logins("standard_user", "stand_pass1");
         login_page3.verify_successful_login();
         PoiskTikets PTiket = new PoiskTikets();
-        PTiket.findFlights("Москва", "Нью-Йорк","12025-12-15");
+        PTiket.findFlights("Москва", "Нью-Йорк","15-12-2025");
         ListReisov LR = new ListReisov();
         //Проверить сортировку по времени (возрастание-по умолч/убывание - сделать)
         //sleep(5_000);
-        LR.searchStrochkuReisa("Москва","Нью-Йорк","15-12-2025",
+        LR.searchStrochkuReisa("Москва","Нью-Йорк","2025-12-15",
                 "07:30","55 000 руб.");
         LR.SortSpiskaReisov("price");
-        LR.searchStrochkuReisa("Москва","Нью-Йорк","15-12-2025",
+        LR.searchStrochkuReisa("Москва","Нью-Йорк","2025-12-15",
                 "09:00","53 000 руб.");
         //sleep(5_000);
         LR.SortSpiskaReisov("time");
-        LR.searchStrochkuReisa("Москва","Нью-Йорк","15-12-2025",
+        LR.searchStrochkuReisa("Москва","Нью-Йорк","2025-12-15",
                 "07:30","55 000 руб.");
         //sleep(5_000);
         //Проверить сортировку по цене (возрастание/убывание)
         LR.filtrReisov("desc");
-        LR.searchStrochkuReisa("Москва","Нью-Йорк","15-12-2025",
+        LR.searchStrochkuReisa("Москва","Нью-Йорк","2025-12-15",
                 "18:00","60 000 руб.");
         LR.SortSpiskaReisov("price");
-        LR.searchStrochkuReisa("Москва","Нью-Йорк","15-12-2025",
+        LR.searchStrochkuReisa("Москва","Нью-Йорк","2025-12-15",
                 "18:00","60 000 руб.");
         LR.filtrReisov("asc");
         sleep(5_000);
-        LR.searchStrochkuReisa("Москва","Нью-Йорк","15-12-2025",
+        LR.searchStrochkuReisa("Москва","Нью-Йорк","2025-12-15",
                 "09:00","53 000 руб.");
          LR.PoiskNew();
         //Проверить кнопку "Новый поиск"

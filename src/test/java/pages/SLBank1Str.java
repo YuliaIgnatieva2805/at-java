@@ -1,23 +1,24 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-
+import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.TypeOptions.text;
 
-public class KnopkaSLBank {
+public class SLBank1Str {
     SelenideElement
-    butt = $x("//input[@type='submit'"),
-    textZag = $x("//h1");
+        SlBanl = $x("//a[contains(.,'SL-банк')]"),
+        textZagStr1 = $x("//h1"),
+        SsilkaVhoda = $x("//a[contains(.,'войти в личный кабинет')]");
 
     public void zagg(String zz) {
-        textZag.shouldBe(Condition.text(zz));
+        textZagStr1.shouldBe(text(zz));
+        SlBanl.shouldBe(exist);
     }
 
-    public void clickButt(String hh) {
-
+    public void clickssilka() {
+        SsilkaVhoda.click();
     }
 
 }
